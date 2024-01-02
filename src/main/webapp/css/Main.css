@@ -1,0 +1,302 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* { 
+ font-family: 'Noto Sans KR', sans-serif;
+ font-weight: bold;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    color : black;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+/* header */
+header{
+    background-color: #fcefe37a;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0 35px 0 35px;
+    
+}
+
+.h_cont1{
+    display: flex;
+    height: 60px;
+    /* background-color: yellow; */
+}
+
+.h_icon {
+    display: flex;
+    margin-left: 50px;
+    margin-top: 3px;
+}
+
+.logo {
+    width: 55px;
+}
+
+/* .h_cont2_input img{
+    padding-top: 10px;
+} */
+
+.h_cont2 li:first-child{
+    display: flex;
+}
+
+.h_cont2_btn{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 150px;
+    padding: 5px 5px 5px 5px;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.h_cont2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: pink; */
+}
+
+.h_cont2 li {
+    padding-left: 20px;
+}
+
+/* main */
+.pages {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: -100%;
+    transition: bottom .7s;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.page:first-child {
+  bottom: 0;
+}
+
+/* menu1 */
+.menu1 page {
+   	background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.menu1_img{
+	width: 50%;
+	height: 70%;
+}
+
+
+h2{
+    display: flex;
+    padding-left: 150px;
+    text-align: left;
+    font-size: 3rem;
+    margin-top: 5px;
+/*    background-color: #febf00;*/
+}
+
+h4{
+    font-size: 1.5rem;
+    margin-left: 160px;
+    padding-bottom: 20px;
+}
+
+.in, .out{
+    margin: 0 0 20px 160px;
+
+}
+.food-out{
+    margin-top: 50px;
+    margin-bottom: 450px;
+}
+
+input{
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* menu1 btn */
+.menu1_btn{
+    background-color:#febf00;
+    border-radius: 20px;
+    border: 1px solid#febf00;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding: 1rem 3rem;
+    margin-left: 15px;
+    transition: transform 100ms ease-in;
+}
+
+.menu1_btn:active{
+    transform: scale(0.95);
+}
+
+.menu1_btn:focus{
+    outline: none;
+}
+
+/* menu2 */
+.menu2{
+    background-repeat: no-repeat;   
+}
+
+
+
+canvas {
+    margin-top : 100px;  
+    transition: 2s;
+}
+
+.menu2_btn {
+    z-index : 1000;
+    background: #febf00;
+    padding: .8rem 1.8rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: .2s;
+    cursor: pointer;
+
+}
+  
+.menu2_btn2 {
+    background: #febf00;
+    padding: .8rem 1.8rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+button:active {
+    background: #444;
+    color: #f9f9f9;
+}
+   
+#menu {
+    width: 100%;
+    height : 960px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    text-align : center;
+    flex-direction: column;
+    position: relative;
+}
+  
+#menu::before {
+    margin-top : 100px; 
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 50px;
+    border-radius: 5px;
+    /* background: #000; */
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 22;
+    border-top: 50px solid #f50000;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+
+}
+
+
+/* menu3 */
+.menu3 {
+    background-color: #FDF9E4;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* menu4 */
+.menu4 {
+    background-color: #8AD7F9;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+
+
+
+/* side pageination */
+.pagination {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pagination>li {
+    list-style: none;
+    height: 13px;
+    width: 13px;
+    background: #000000;
+    border-radius: 50%;
+    margin-top: 10px;
+    transition: background .7s;
+    background-color: dodgerblue;
+    overflow: hidden;
+}
+
+.pagination>li.active {
+    background: lightpink;
+}
+
+.title{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.title3:hover, .title4:hover{
+	color: lightblue;
+}
+
+.title3:active, .title4:active{
+	color: lightsalmon;
+}
+
+p{
+	padding-left: 270px;
+}

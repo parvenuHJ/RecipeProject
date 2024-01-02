@@ -1,0 +1,391 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* { 
+ font-family: 'Noto Sans KR', sans-serif;
+ font-weight: bold;
+}
+
+:root{
+    /* COLORS */
+    --white: #FCEFE3;
+    --lightblue: #8AD7F9;
+    --lightpink: #FECCBE;   
+}
+
+ul,ol{
+    list-style: none;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--white);
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+.wrap{
+    background-color: var(--white);
+}
+
+/* header */
+header{
+    background-color: #fcefe37a;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0 35px 0 35px;
+    
+}
+
+.h_cont1{
+    display: flex;
+    height: 60px;
+    /* background-color: yellow; */
+}
+
+.h_icon {
+    display: flex;
+  }
+
+.logo {
+    width: 55px;
+}
+
+.h_cont2_input img{
+    padding-top: 10px;
+}
+
+.h_cont2 li:first-child{
+    display: flex;
+}
+
+.h_cont2_btn{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 150px;
+    padding: 5px 5px 5px 5px;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.h_cont2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.h_cont2 li {
+    padding-left: 20px;
+}
+
+
+
+/* sidebar */
+#sidebar{
+    width: 200px;
+    height: 800px;
+    float: left;
+     margin-top: 80px;
+}
+
+.menu {
+    display: block;
+    overflow: hidden; /* 반응형 애니메이션용 */
+    width: 200px;
+    height: 815px;
+    background-color: lightblue;
+    color: #fff;
+    transition: all 0.5s ease; /* 반응형 애니메이션 */
+    padding: 10px; 
+    box-sizing: border-box;
+}
+.menu ul {
+    list-style: none;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+.menu a, .menu > label {
+
+    display: block;
+    height: 25px;
+    margin-bottom: 25%;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #000;
+}
+.menu ul li:hover, .menu > label:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+}
+
+.menu div {
+    position: absolute; /* 절대 위치로 텍스트 고정 */
+    left: 50px;
+    line-height: 1.5;
+    font-size: 1em;
+    font-family: 'Noto Sans KR';
+    padding: 0 0 0 20px; /* 아이콘과 텍스트 사이 여백 */
+}
+
+#expand-menu {
+    display: none;
+}
+#expand-menu:checked ~ ul {
+    display: block;
+    height: auto;
+    justify-content: space-between;
+}
+
+.menu ::before {
+    font-family: 'Material Icons';
+    font-size: 1.5em;
+    float: left;
+    clear: left;
+}
+.menu li:nth-child(1) a::before{ content: '\e88a'; }
+.menu li:nth-child(2) a::before{ content: '\e853'; }
+.menu li:nth-child(3) a::before{ content: '\e87d'; }
+.menu li:nth-child(4) a::before{ content: '\e0b7'; }
+.menu li:nth-child(5) a::before{ content: '\e158'; }
+
+@media screen and (max-width:1023px) {
+    .menu {
+        width: 60px;
+    }
+}
+@media screen and (max-width:560px) {
+    .menu #expand-menu:not(:checked) ~ ul { /* 데스크화면에서 접은 사이드 펼칠 수 있음*/
+        display: none;
+    }
+}
+
+/* content */
+.content{
+    max-width: var(--max-width);
+    max-height: var(--max-height);
+} 
+
+body{
+    min-height: 100vh;
+    /* background: red; */
+}
+
+.navigation{
+    position: fixed;
+    width: 60px;
+    height: 94%;
+    background: var(--white);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation:hover, .navigation.active{
+    width: 200px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation ul li:hover{
+    background: lightpink;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #000;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon .fa{
+    font-size: 24px;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/* content */
+section{
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(114, 162, 224);
+}
+
+
+
+/* h2{
+    text-align: center;
+    width: 800px;
+    margin-top: 0;
+    margin-left: 550px;
+    font-size: 3rem;
+    background-color: lightgoldenrodyellow;
+} */
+
+h4{
+    width: 800px;
+    margin-top: 50px;
+    margin-left: 450;
+    float: center;
+}
+
+.item{
+    width: 300px;
+    height: 30px;
+    margin-left: 590px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.up_btn{
+    background-color: var(--lightpink);
+    border-radius: 20px;
+    border: 1px solid var(--lightpink);
+    color: #000;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding: 0.8rem 2rem;
+    margin-left: 10px;
+    transition: transform 100ms ease-in;
+}
+.de_btn{
+    background-color: rgb(212, 52, 52);
+    border-radius: 20px;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding: 0.8rem 2em;
+    transition: transform 100ms ease-in;
+}
+
+.mem_delete{
+	width: 100px;
+	float: right;
+}
+
+
+ul > .update{
+    margin-left: 570px;
+    margin-top: 1.5rem;
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.title ::before{
+    font-family: 'Material Icons';
+    font-size: 2.5em;
+    float: left;
+    clear: left;
+}
+
+.form > input #up_in{
+    justify-content: space-between;    
+ 
+}
+    
+/* 회원정보 수정 */
+h3{
+    font-size: 30px;
+    text-align: left;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.row_wrap {
+    width: 670px;
+    margin: 0 auto;
+    display: felx;
+    /* background-color: yellowgreen; */
+    
+}
+.row {
+    display: flex;
+    padding: 10px 0;
+    height: 100px;
+}
+
+.title_content{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.txtfield{
+    flex: 1;
+    background-color: white;
+    width: 300px;
+    height: 50px;
+    font-size: 13px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-color: rgba(0, 0, 0, 0.3);
+            
+}
+
+.update_btn{
+    text-align: center;
+    padding: 10px 10px;
+}

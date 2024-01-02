@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.RelikeMapper">
+   
+
+   <insert id="RelikeInsert" parameterType="RelikeVO">
+      
+    INSERT INTO Re_like (mem_id, re_code)
+        VALUES (#{mem_id}, #{re_code})
+    </insert>
+
+	<delete id="RelikeDelete" parameterType="RelikeVO">
+   DELETE FROM Re_like
+   WHERE mem_id = #{mem_id}
+   AND re_code =#{re_code}
+   </delete>
+   
+   <select id="RelikeSelect" resultType="RecipeVO">
+      Select B.RE_CODE, B.RE_PER, B.RE_TIME , B.RE_LEVEL, B.FOOD_NAME, B.RE_URL
+      FROM RE_like A, recipe b
+      where  A.RE_CODE=B.RE_CODE
+      and MEM_ID = #{mem_id}
+   </select>
+	
+
+</mapper>

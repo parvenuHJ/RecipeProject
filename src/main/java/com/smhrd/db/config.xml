@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <properties resource="com/smhrd/db/db.properties"/>
+  <settings> <setting name="jdbcTypeForNull" value="VARCHAR"/> </settings>
+  <typeAliases>
+		<typeAlias type="com.smhrd.model.MemberVO" alias="MemberVO"/>
+		<typeAlias type="com.smhrd.model.CommentVO" alias="CommentVO"/>
+		<typeAlias type="com.smhrd.model.InfoVO" alias="InfoVO"/>
+		<typeAlias type="com.smhrd.model.GuideVO" alias="GuideVO"/>
+		<typeAlias type="com.smhrd.model.RecipeVO" alias="RecipeVO"/>
+		<typeAlias type="com.smhrd.model.IngreSelectVO" alias="IngreSelectVO"/>
+		<typeAlias type="com.smhrd.model.IngrementVO" alias="IngrementVO"/>
+		<typeAlias type="com.smhrd.model.RecipeDetailVO" alias="RecipeDetailVO"/>
+		<typeAlias type="com.smhrd.model.RelikeVO" alias="RelikeVO"/>
+		<typeAlias type="com.smhrd.model.IngreSelectVO" alias="IngreSelectVO"/>
+		
+	</typeAliases>
+  
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+    <!-- sql문들을 정의해주는 mapper.xml을 계속해서 만들건데 어디에 있는지 경로를 지정해주는 태그 -->
+  
+  <mappers>
+      <mapper resource="com/smhrd/db/MemberMapper.xml"/>
+      <mapper resource="com/smhrd/db/CommentMapper.xml"/>
+         <mapper resource="com/smhrd/db/InfoMapper.xml"/>
+      <mapper resource="com/smhrd/db/GuideMapper.xml"/>
+      <mapper resource="com/smhrd/db/RecipeMapper.xml"/>
+       <mapper resource="com/smhrd/db/IngreSelectMapper.xml"/>
+       <mapper resource="com/smhrd/db/RelikeMapper.xml"/>
+       <mapper resource="com/smhrd/db/IngreSelectMapper.xml"/>
+  
+  </mappers>
+</configuration>

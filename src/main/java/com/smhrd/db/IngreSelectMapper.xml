@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.IngreSelectMapper">
+
+
+	 <select id="IngreSelectList" resultType="RecipeVO">
+   
+   SELECT *
+FROM (
+  SELECT DISTINCT c.food_name, c.re_code, c.re_per, c.re_time, c.re_level, c.re_url
+  FROM INGRE_JOIN A
+  JOIN INGREMENT B ON A.INGRE_CODE = B.INGRE_CODE
+  JOIN RECIPE C ON A.RE_CODE = C.RE_CODE
+  WHERE B.INGRE_NAME LIKE '%'||#{input1}||'%'
+     OR B.INGRE_NAME LIKE '%'||#{input2}||'%'
+     OR B.INGRE_NAME LIKE '%'||#{input3}||'%'
+) SubQuery
+WHERE SubQuery.food_name NOT IN (
+  SELECT DISTINCT c.food_name
+  FROM INGRE_JOIN A
+  JOIN INGREMENT B ON A.INGRE_CODE = B.INGRE_CODE
+  JOIN RECIPE C ON A.RE_CODE = C.RE_CODE
+  WHERE B.INGRE_NAME LIKE '%'||#{input4}||'%'
+     OR B.INGRE_NAME LIKE '%'||#{input5}||'%'
+     OR B.INGRE_NAME LIKE '%'||#{input6}||'%'
+)
+   
+   </select>
+
+</mapper>

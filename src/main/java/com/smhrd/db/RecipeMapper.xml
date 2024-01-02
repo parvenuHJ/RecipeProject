@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.RecipeMapper">
+
+	<!-- 레시피 전체 조회 -->
+   <select id="RecipeShow" resultType="RecipeVO">
+      select * from RECIPE
+   </select>
+   
+   <!-- 레시피 메뉴로 조회 -->
+   
+    <select id="RecipeSelect" resultType="RecipeVO">
+   		select * from RECIPE where FOOD_NAME like '%'||#{food_name}||'%'
+	</select>
+	
+	<!-- 레시피 한 개 조회 -->
+	<select id="RecipeOne" resultType="RecipeVO">
+		select * from recipe where food_name=#{food_name}		
+	</select>
+	
+	<!-- 재료 조회 -->
+	<select id="Ingrement" resultType="IngrementVO">
+		select ingre_name
+		from ingre_join a, ingrement b
+		where a.ingre_code=b.ingre_code
+		and a.re_code=#{re_code}
+	</select>
+	
+   
+   <!-- 레시피 디테일 조회 -->
+   <select id="RecipeDetail" resultType="RecipeDetailVO">
+   		select de_text, de_url
+		from recipe_detail a, recipe b
+		where a.re_code=b.re_code
+		and a.re_code=#{re_code}
+   
+   </select>
+   
+ 
+   
+   
+   <!-- 레시피 전체 개수(페이징용) -->
+   <select id="CountRecipe" resultType="int">
+	SELECT COUNT(*) FROM recipe
+</select>
+
+<!-- 페이징 처리 후 게시글 조회 -->
+<!-- <select id="RecipeShow" parameterType="hashMap" resultType="RecipeVO">
+	select * 
+from (select row_number() over (order by re_code asc) num,
+            a.*
+        from recipe a
+        order by re_code
+        )
+	WHERE num BETWEEN #{start} AND #{end}
+</select> -->
+
+
+
+
+
+</mapper>
