@@ -6,6 +6,9 @@
    원하지 않는 재료를 제외한 검색 기능  
    선택의 다양화를 위한 룰렛 기능과 주변 맛집 추천 기능 제공
 
+# 프로젝트 기간 : 
+2023.09.04 ~ 2023.09.20
+
 
 # 설계 과정
 ![image](https://github.com/parvenuHJ/RecipeProject/assets/139337239/9c194604-c6ea-46db-afb1-4c69b7064f91)
