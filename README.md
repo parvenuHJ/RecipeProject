@@ -45,6 +45,8 @@
 # 돌림판을 통한 레시피 랜덤 추천
 ![image](https://github.com/parvenuHJ/RecipeProject/assets/139337239/aeb97cd1-2120-40f3-953f-d8dfd57d4654)
 
+# 시연영상
+https://youtu.be/xOp2BAtNvkc
 
 
 # 성과
